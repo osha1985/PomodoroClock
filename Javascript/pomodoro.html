@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp" ng-controller="MainController">
 
 <head>
     <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="script.js" charset="utf-8"></script>
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
@@ -12,24 +11,25 @@
 
 <body>
     <div id="clock">
-        <div id="slider"></div>
-        <div id="cover"></div>
-        <div id="clockface">
-            <div id="clockText"></div>
+        <div id="slider" ng-style="sliderStyle"></div>
+        <div id="cover" ng-style="coverStyle"></div>
+        <div id="clockface" ng-click="toggleTimer()">
+            <div id="clockText" ng-hide="timerStarted">{{sessionLength}}</div>
+            <div id="clockText" ng-show="timerStarted">{{Math.floor(time/60)}}:{{time%60}}</div>
         </div>
     </div>
-    <div ng-app="myApp">
-        <div ng-controller="breakLength" id="breakLength">
+    <div>
+        <div id="breakLength">
             <div class="textField">Break Length</div>
-            <div ng-click="increment()" class="incrementButton" id="breakLengthIncrement">+</div>
-            <div class="timeValue">{{length}}</div>
-            <div ng-click="decrement()" class="decrementButton" id="breakLengthDecrement">-</div>
+            <div ng-click="decrementBreakLength()" class="decrementButton">-</div>
+            <div class="timeValue">{{breakLength}}</div>
+            <div ng-click="incrementBreakLength()" class="incrementButton">+</div>
         </div>
-        <div ng-controller="sessionLength" id="sessionLength">
+        <div id="sessionLength">
             <div class="textField">Session Length</div>
-            <div ng-click="length" class="incrementButton" id="sessionLengthIncrement">+</div>
-            <div class="timeValue">{{length}}</div>
-            <div ng-click="decrement()" class="decrementButton" id="sessionLengthDecrement">-</div>
+            <div ng-click="decrementSessionLength()" class="decrementButton">-</div>
+            <div class="timeValue">{{sessionLength}}</div>
+            <div ng-click="incrementSessionLength()" class="incrementButton">+</div>
         </div>
     </div>
 </body>
