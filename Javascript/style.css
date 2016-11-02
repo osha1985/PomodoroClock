@@ -1,0 +1,102 @@
+#clock {
+    width: 50vh;
+    height: 50vh;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    background-color: white;
+}
+
+#cover {
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+    float: left;
+    transform-origin: center right;
+}
+
+#slider {
+    width: 50%;
+    height: 100%;
+    transform-origin: center left;
+    background-color: blue;
+    float: right;
+}
+
+#clockface {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+#clockText {
+    width: 100%;
+    height: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    font-size: 2em;
+    text-align: center;
+    border-radius: 50%
+}
+
+#breakLength {
+    width: 25vh;
+    height: 25vh;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+#sessionLength {
+    width: 25vh;
+    height: 25vh;
+    float: left;
+    position: relative;
+}
+
+.textField {
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    float: left;
+}
+
+.incrementButton {
+    float: left;
+    width: 25%;
+    height: 25%;
+    text-align: center;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.decrementButton {
+    float: right;
+    width: 25%;
+    height: 25%;
+    text-align: center;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.timeValue {
+  width: 100%;
+  height: 2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  font-size: 2em;
+  text-align: center;
+  z-index:-1;
+}
